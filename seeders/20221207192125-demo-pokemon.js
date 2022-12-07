@@ -15,7 +15,9 @@ module.exports = {
       def:49,
       satk:65,
       sdef:65,
-      spd:45
+      spd:45,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 4,
@@ -29,7 +31,9 @@ module.exports = {
       def:43,
       satk:60,
       sdef:50,
-      spd:65
+      spd:65,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 7,
@@ -43,7 +47,9 @@ module.exports = {
       def:65,
       satk:50,
       sdef:64,
-      spd:43
+      spd:43,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 12,
@@ -57,7 +63,9 @@ module.exports = {
       def:50,
       satk:90,
       sdef:80,
-      spd:70
+      spd:70,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 25,
@@ -71,7 +79,9 @@ module.exports = {
       def:40,
       satk:50,
       sdef:50,
-      spd:90
+      spd:90,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 92,
@@ -85,7 +95,9 @@ module.exports = {
       def:30,
       satk:100,
       sdef:35,
-      spd:80
+      spd:80,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 132,
@@ -99,7 +111,9 @@ module.exports = {
       def:48,
       satk:48,
       sdef:48,
-      spd:48
+      spd:48,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 144,
@@ -113,7 +127,9 @@ module.exports = {
       def:100,
       satk:95,
       sdef:125,
-      spd:85
+      spd:85,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       id: 151,
@@ -127,7 +143,9 @@ module.exports = {
       def:100,
       satk:100,
       sdef:100,
-      spd:100
+      spd:100,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },])
   },
 

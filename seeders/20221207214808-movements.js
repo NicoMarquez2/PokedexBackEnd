@@ -4,34 +4,54 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('movements', [{
-      movement: 'Razor-wind' //1
+      movement: 'Razor-wind',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Pound' //2
+      movement:'Pound',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Gust' //3
+      movement:'Gust',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Mega-punch' //4
+      movement:'Mega-punch',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Transform' //5
+      movement:'Transform',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Fire-punch' //6
+      movement:'Fire-punch',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Ice-punch' //7
+      movement:'Ice-punch',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Pay-day' //8
+      movement:'Pay-day',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Razor-wind' //9
+      movement:'Razor-wind',
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      movement:'Swords-dance' //10
+      movement:'Swords-dance',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
     },
 

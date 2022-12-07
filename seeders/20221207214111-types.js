@@ -4,58 +4,94 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
       await queryInterface.bulkInsert('types', [{
-        type: 'Ice' //1
+        type: 'Ice',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Dark' //2
+        type: 'Dark',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Fairy' //3
+        type: 'Fairy',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Fighting' //4
+        type: 'Fighting',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Ground' //5
+        type: 'Ground',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Dragon' //6
+        type: 'Dragon',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Rock' //7
+        type: 'Rock',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Water' //8
+        type: 'Water',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Electric' //9
+        type: 'Electric',
+        createdAt: new Date(),
+        updatedAt: new Date() 
       },
       {
-        type: 'Psychic' //10
+        type: 'Psychic',
+        createdAt: new Date(),
+        updatedAt: new Date() 
       },
       {
-        type: 'Ghost' //11
+        type: 'Ghost',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Normal' //12
+        type: 'Normal',
+        createdAt: new Date(),
+        updatedAt: new Date() 
       },
       {
-        type: 'Fire' //13
+        type: 'Fire',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Bug' //14
+        type: 'Bug',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Grass' //15
+        type: 'Grass',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Steel' //16
+        type: 'Steel',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Poison' //17
+        type: 'Poison',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        type: 'Flying' //18
+        type: 'Flying',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }], {}); 
   },
 
