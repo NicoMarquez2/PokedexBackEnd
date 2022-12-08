@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     satk: DataTypes.INTEGER,
     sdef: DataTypes.INTEGER,
     spd: DataTypes.INTEGER,
-    createdBy: DataTypes.INTEGER
+    created_by: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'pokemons',

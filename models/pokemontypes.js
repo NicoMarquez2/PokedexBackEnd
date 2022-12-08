@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   pokemonTypes.init({
-    idPokemon: DataTypes.INTEGER,
-    idType: DataTypes.INTEGER
+    id_pokemon: DataTypes.INTEGER,
+    id_type: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'pokemon_types',
