@@ -2,13 +2,19 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pokemonMovements', {
-      idPokemon: {
-        primaryKey: true,
-        references: { model: 'Pokemons', key: 'id' },
+    await queryInterface.createTable('pokemon_movements', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: false,
         type: Sequelize.INTEGER
       },
-      idMovement: {
+      id_pokemon: {
+        primaryKey: true,
+        references: { model: 'pokemons', key: 'id' },
+        type: Sequelize.INTEGER
+      },
+      id_movement: {
         primaryKey: true,
         references: { model: 'movements', key: 'id' },
         type: Sequelize.INTEGER
@@ -24,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pokemonMovements');
+    await queryInterface.dropTable('pokemon_movements');
   }
 };

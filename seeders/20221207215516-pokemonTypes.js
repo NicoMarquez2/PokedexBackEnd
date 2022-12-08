@@ -3,87 +3,87 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('pokemonTypes',[{
-      idPokemon:1,
-      idType:15,
+    await queryInterface.bulkInsert('pokemon_types',[{
+      id_pokemon:1,
+      id_type:15,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:1,
-      idType:17,
+      id_pokemon:1,
+      id_type:17,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:4,
-      idType:17,
+      id_pokemon:4,
+      id_type:17,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:7,
-      idType:8,
+      id_pokemon:7,
+      id_type:8,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:12,
-      idType:14,
+      id_pokemon:12,
+      id_type:14,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:12,
-      idType:18,
+      id_pokemon:12,
+      id_type:18,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:25,
-      idType:9,
+      id_pokemon:25,
+      id_type:9,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:92,
-      idType:11,
+      id_pokemon:92,
+      id_type:11,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:92,
-      idType:17,
+      id_pokemon:92,
+      id_type:17,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:132,
-      idType:12,
+      id_pokemon:132,
+      id_type:12,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:144,
-      idType:1,
+      id_pokemon:144,
+      id_type:1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:144,
-      idType:18,
+      id_pokemon:144,
+      id_type:18,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:151,
-      idType:10,
+      id_pokemon:151,
+      id_type:10,
       createdAt: new Date(),
       updatedAt: new Date()
     },])
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('pokemonTypes', null, {});   
+    await queryInterface.bulkDelete('pokemon_types', null, {});   
   }
 };

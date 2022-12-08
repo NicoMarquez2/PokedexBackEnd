@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     idType: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'pokemonTypes',
+    modelName: 'pokemon_types',
   });
   return pokemonTypes;
 };

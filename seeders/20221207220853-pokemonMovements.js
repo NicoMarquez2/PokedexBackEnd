@@ -3,111 +3,111 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('pokemonMovements',[{
-      idPokemon:1,
-      idMovement:1,
+    await queryInterface.bulkInsert('pokemon_movements',[{
+      id_pokemon:1,
+      id_movement:1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:1,
-      idMovement:10,
+      id_pokemon:1,
+      id_movement:10,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:4,
-      idMovement:4,
+      id_pokemon:4,
+      id_movement:4,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:4,
-      idMovement:6,
+      id_pokemon:4,
+      id_movement:6,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:7,
-      idMovement:4,
+      id_pokemon:7,
+      id_movement:4,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:7,
-      idMovement:7,
+      id_pokemon:7,
+      id_movement:7,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:12,
-      idMovement:1,
+      id_pokemon:12,
+      id_movement:1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:12,
-      idMovement:3,
+      id_pokemon:12,
+      id_movement:3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:25,
-      idMovement:4,
+      id_pokemon:25,
+      id_movement:4,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:25,
-      idMovement:8,
+      id_pokemon:25,
+      id_movement:8,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:92,
-      idMovement:6,
+      id_pokemon:92,
+      id_movement:6,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:92,
-      idMovement:7,
+      id_pokemon:92,
+      id_movement:7,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:132,
-      idMovement:5,
+      id_pokemon:132,
+      id_movement:5,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:144,
-      idMovement:1,
+      id_pokemon:144,
+      id_movement:1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:144,
-      idMovement:3,
+      id_pokemon:144,
+      id_movement:3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:151,
-      idMovement:2,
+      id_pokemon:151,
+      id_movement:2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      idPokemon:151,
-      idMovement:4,
+      id_pokemon:151,
+      id_movement:4,
       createdAt: new Date(),
       updatedAt: new Date()
     },])
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('pokemonMovements', null, {});    
+    await queryInterface.bulkDelete('pokemon_movements', null, {});    
   }
 };
