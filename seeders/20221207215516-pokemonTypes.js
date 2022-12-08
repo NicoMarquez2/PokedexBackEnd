@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       id_pokemon:4,
-      id_type:17,
+      id_type:13,
       createdAt: new Date(),
       updatedAt: new Date()
     },
