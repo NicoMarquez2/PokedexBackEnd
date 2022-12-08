@@ -15,6 +15,9 @@ router.get('/', async (req, res) => {
     const pokemonMovements = await sequelize.query(
         "SELECT * FROM pokemon_movements JOIN pokemons ON pokemon_movements.id_pokemon = pokemons.id"
     )
+    /*const pokemonTypes = await sequelize.query(
+        "SELECT * FROM pokemon_types JOIN pokemons ON pokemon_types.id_pokemon = pokemons.id"
+    )*/
     const pokemonTypes = await PokemonTypes.findAll()
     res.status(200).send({pokemons, types, movements, pokemonMovements, pokemonTypes})
 })
