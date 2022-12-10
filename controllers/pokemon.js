@@ -21,5 +21,15 @@ router.get('/', async (req, res) => {
     res.status(200).send({pokemons, pokemonTypes, pokemonMovements})
 })
 
+router.post('/', async (req, res) => {
+    const userId = req.get("userId")
+    
+    const pokemon = req.body.pokemon
+    const types = req.body.types
+    const movements = req.body.movements
+
+    res.send({pokemon,types,movements})
+})
+
 
 module.exports = router
