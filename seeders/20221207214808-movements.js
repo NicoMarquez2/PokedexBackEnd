@@ -44,11 +44,6 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      movement:'Razor-wind',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
       movement:'Swords-dance',
       createdAt: new Date(),
       updatedAt: new Date()
