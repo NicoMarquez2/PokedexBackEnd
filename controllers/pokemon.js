@@ -17,7 +17,7 @@ async function createIdToNewPokemon(){
 }
 
 async function getMovementId(movement){
-    if(Array.isArray(movement)){
+    if(movement.length > 1){
         const getMovements = await Movements.findAll({
             where: {
                 movement:{
@@ -35,12 +35,12 @@ async function getMovementId(movement){
                 movement: movement
             }
         })
-        return (getMovement)
+        return (getMovement[0].dataValues.id)
     }    
 }
 
 async function getTypeId(type){
-    if(Array.isArray(type)){
+    if(type.length > 1){
         const getTypes = await Types.findAll({
             where: {
                 type:{
@@ -81,21 +81,32 @@ router.post('/', async (req, res) => {
     const movements = req.body.movements
 
     const pokemonId = await createIdToNewPokemon()
+    console.log("POKEMON ID: " + pokemonId)
     pokemon['id'] = pokemonId
+    console.log("POKEMON ID: " + pokemon.id)
+    pokemon['created_by'] = parseInt(userId)
 
-    const typeId = await getTypeId(types.type)
+    const typeId = await getTypeId(types)
+    console.log("ID TIPOS: " + typeId)
+    const movementId = await getMovementId(movements)
+    console.log("ID MOVS: " + movementId)
+    await Pokemon.create(pokemon)
 
-    const movementId = await getMovementId(movements.movement)
-    
-    /*if(Array.isArray(typeId)){
+    if(typeId.length > 1){
         await PokemonTypes.create({id_pokemon: `${pokemonId}`, id_type: `${typeId[0]}`})
         await PokemonTypes.create({id_pokemon: `${pokemonId}`, id_type: `${typeId[1]}`})
     } else {
         await PokemonTypes.create({id_pokemon: `${pokemonId}`, id_type: `${typeId}`})
-    }*/
-
-    //await Pokemon.create({pokemon})
-    res.send({pokemon,types,movements})
+    }
+    
+    if(movementId.length > 1){
+        await PokemonMovements.create({id_pokemon: `${pokemonId}`, id_movement: `${movementId[0]}`})
+        await PokemonMovements.create({id_pokemon: `${pokemonId}`, id_movement: `${movementId[1]}`})
+    } else {
+        await PokemonMovements.create({id_pokemon: `${pokemonId}`, id_movement: `${movementId}`})
+    }
+    
+    res.status(201).send({pokemon,types,movements})
 })
 
 
