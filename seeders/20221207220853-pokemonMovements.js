@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       id_pokemon:1,
-      id_movement:10,
+      id_movement:9,
       createdAt: new Date(),
       updatedAt: new Date()
     },

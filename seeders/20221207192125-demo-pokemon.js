@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('pokemons',[{
       id: 1,
       name:'Bulbasaur',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
       weight:6.9,
       height:0.7,
       description:'bulbasaur description',
@@ -22,7 +22,7 @@ module.exports = {
     {
       id: 4,
       name:'Charmander',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
       weight:8.5,
       height:0.6,
       description:'Charmander description',
@@ -38,7 +38,7 @@ module.exports = {
     {
       id: 7,
       name:'Squirtle',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
       weight:9.0,
       height:0.5,
       description:'Squirtle description',
@@ -54,7 +54,7 @@ module.exports = {
     {
       id: 12,
       name:'Butterfree',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png',
       weight:32.0,
       height:1.1,
       description:'Butterfree description',
@@ -70,7 +70,7 @@ module.exports = {
     {
       id: 25,
       name:'Pikachu',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
       weight:6.0,
       height:0.4,
       description:'Pikachu description',
@@ -86,7 +86,7 @@ module.exports = {
     {
       id: 92,
       name:'Gastly',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png',
       weight:0.1,
       height:1.3,
       description:'Gastly description',
@@ -102,7 +102,7 @@ module.exports = {
     {
       id: 132,
       name:'Ditto',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png',
       weight:4.0,
       height:0.3,
       description:'Ditto description',
@@ -118,7 +118,7 @@ module.exports = {
     {
       id: 144,
       name:'Articuno',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png',
       weight:55.4,
       height:1.7,
       description:'Articuno description',
@@ -134,7 +134,7 @@ module.exports = {
     {
       id: 151,
       name:'Mew',
-      img:'urlImagen',
+      img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png',
       weight:4.0,
       height:0.4,
       description:'Mew description',
