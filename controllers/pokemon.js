@@ -16,7 +16,7 @@ async function createIdToNewPokemon(){
     return maxId + 1
 }
 
-async function getMovementId(movement){
+/*async function getMovementId(movement){
     if(movement.length > 1){
         const getMovements = await Movements.findAll({
             where: {
@@ -60,7 +60,7 @@ async function getTypeId(type){
         })
         return (getType[0].dataValues.id)
     }    
-}
+}*/
 
 router.get('/', async (req, res) => {
     const pokemons = await Pokemon.findAll()
@@ -73,23 +73,39 @@ router.get('/', async (req, res) => {
     res.status(200).send({pokemons, pokemonTypes, pokemonMovements})
 })
 
+router.get('/:id', async (req, res, next) => {
+    const pokemonId = req.params.id 
+    const pokemon = await Pokemon.findAll({
+        where: {
+            id: pokemonId
+        }
+    })
+
+    res.status(203).send(pokemon)
+})
+
 router.post('/', async (req, res) => {
     const userId = req.get("userId")
     
     const pokemon = req.body.pokemon
-    const types = req.body.types
-    const movements = req.body.movements
+    const types = req.body.pokemonTypes
+    const movements = req.body.pokemonMovements
 
+    console.log(movements)
+    console.log(pokemon)
+    console.log(types)
+    
+    const typeId = types.map((element) => element.id)
+    const movementId = movements.map((element) => element.id)
+    console.log(typeId)
+    console.log(movementId)
     const pokemonId = await createIdToNewPokemon()
-    console.log("POKEMON ID: " + pokemonId)
     pokemon['id'] = pokemonId
-    console.log("POKEMON ID: " + pokemon.id)
     pokemon['created_by'] = parseInt(userId)
 
-    const typeId = await getTypeId(types)
-    console.log("ID TIPOS: " + typeId)
-    const movementId = await getMovementId(movements)
-    console.log("ID MOVS: " + movementId)
+    /*const typeId = await getTypeId(types)
+    const movementId = await getMovementId(movements)*/
+
     await Pokemon.create(pokemon)
 
     if(typeId.length > 1){
