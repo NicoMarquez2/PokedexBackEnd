@@ -81,7 +81,15 @@ router.get('/:id', async (req, res, next) => {
         }
     })
 
-    res.status(203).send(pokemon)
+    const movements = await sequelize.query(
+        `SELECT id_pokemon, movement FROM pokemon_movements JOIN pokemons ON pokemon_movements.id_pokemon = pokemons.id JOIN movements ON pokemon_movements.id_movement = movements.id WHERE id_pokemon = ${pokemonId}`
+    )
+
+    const types = await sequelize.query(
+       `SELECT id_pokemon, type FROM pokemon_types JOIN pokemons ON pokemon_types.id_pokemon = pokemons.id JOIN types ON pokemon_types.id_type = types.id WHERE id_pokemon = ${pokemonId}` 
+    )
+
+    res.status(203).send({pokemon, movements, types})
 })
 
 router.post('/', async (req, res) => {
@@ -90,21 +98,12 @@ router.post('/', async (req, res) => {
     const pokemon = req.body.pokemon
     const types = req.body.pokemonTypes
     const movements = req.body.pokemonMovements
-
-    console.log(movements)
-    console.log(pokemon)
-    console.log(types)
     
     const typeId = types.map((element) => element.id)
     const movementId = movements.map((element) => element.id)
-    console.log(typeId)
-    console.log(movementId)
     const pokemonId = await createIdToNewPokemon()
     pokemon['id'] = pokemonId
     pokemon['created_by'] = parseInt(userId)
-
-    /*const typeId = await getTypeId(types)
-    const movementId = await getMovementId(movements)*/
 
     await Pokemon.create(pokemon)
 
