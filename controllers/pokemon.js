@@ -80,16 +80,20 @@ router.get('/:id', async (req, res, next) => {
             id: pokemonId
         }
     })
+    if(pokemon[0]){
 
-    const movements = await sequelize.query(
-        `SELECT id_pokemon, movement FROM pokemon_movements JOIN pokemons ON pokemon_movements.id_pokemon = pokemons.id JOIN movements ON pokemon_movements.id_movement = movements.id WHERE id_pokemon = ${pokemonId}`
-    )
-
-    const types = await sequelize.query(
-       `SELECT id_pokemon, type FROM pokemon_types JOIN pokemons ON pokemon_types.id_pokemon = pokemons.id JOIN types ON pokemon_types.id_type = types.id WHERE id_pokemon = ${pokemonId}` 
-    )
-
-    res.status(203).send({pokemon, movements, types})
+        const movements = await sequelize.query(
+            `SELECT id_pokemon, movement FROM pokemon_movements JOIN pokemons ON pokemon_movements.id_pokemon = pokemons.id JOIN movements ON pokemon_movements.id_movement = movements.id WHERE id_pokemon = ${pokemonId}`
+        )
+    
+        const types = await sequelize.query(
+           `SELECT id_pokemon, type FROM pokemon_types JOIN pokemons ON pokemon_types.id_pokemon = pokemons.id JOIN types ON pokemon_types.id_type = types.id WHERE id_pokemon = ${pokemonId}` 
+        )
+    
+        res.status(203).send({pokemon, movements, types})
+    } else {
+        res.status(404).send({message: "Pokemon no encontrado"})
+    }
 })
 
 router.post('/', async (req, res) => {
