@@ -5,7 +5,7 @@ const TOKEN_SECRET = "ClaveParaToken"
 const verifyToken = (req, res, next) => {
     const token = req.header('Autorithation')
     try{
-        const verified = jwt.verify(token.split(' ')[1], TOKEN_SECRET)
+        const verified = jwt.verify(token/*.split(' ')[1]*/, TOKEN_SECRET)
         req.user = verified
         next()
     }

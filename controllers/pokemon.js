@@ -3,6 +3,7 @@ const { sequelize } = require('../models');
 const router = express.Router();
 const models = require('../models')
 const { Op } = require("sequelize");
+const { verifyToken } = require('../middlewares/validate-jwt');
 const Pokemon = models.pokemons
 const Types  = models.types
 const Movements  = models.movements
@@ -97,6 +98,11 @@ router.get('/:id', async (req, res, next) => {
 })
 
 router.post('/', async (req, res) => {
+    verifyToken()
+    if(!req.headers['Autorithation']){
+        res.status(403).send({message: "no tienes permisos para crear un pokemon"})
+    }
+    console.log(req.headers)
     const userId = req.get("userId")
     
     const pokemon = req.body.pokemon
