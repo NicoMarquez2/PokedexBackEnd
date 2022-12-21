@@ -97,12 +97,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.post('/', async (req, res) => {
-    verifyToken()
-    if(!req.headers['Autorithation']){
-        res.status(403).send({message: "no tienes permisos para crear un pokemon"})
-    }
-    console.log(req.headers)
+router.post('/', verifyToken, async (req, res) => {
     const userId = req.get("userId")
     
     const pokemon = req.body.pokemon
