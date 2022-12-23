@@ -17,52 +17,6 @@ async function createIdToNewPokemon(){
     return maxId + 1
 }
 
-/*async function getMovementId(movement){
-    if(movement.length > 1){
-        const getMovements = await Movements.findAll({
-            where: {
-                movement:{
-                    [Op.or]: [movement[0], movement[1]]
-                }
-            }
-        })
-
-        const movementsId = [getMovements[0].dataValues.id, getMovements[1].dataValues.id]
-
-        return(movementsId)
-    } else {
-        const getMovement = await Movements.findAll({
-            where:{
-                movement: movement
-            }
-        })
-        return (getMovement[0].dataValues.id)
-    }    
-}
-
-async function getTypeId(type){
-    if(type.length > 1){
-        const getTypes = await Types.findAll({
-            where: {
-                type:{
-                    [Op.or]: [type[0], type[1]]
-                }
-            }
-        })
-
-        const typesId = [getTypes[0].dataValues.id, getTypes[1].dataValues.id]
-
-        return(typesId)
-    } else {
-        const getType = await Types.findAll({
-            where:{
-                type: type
-            }
-        })
-        return (getType[0].dataValues.id)
-    }    
-}*/
-
 router.get('/', async (req, res, next) => {
     try{
         const pokemons = await Pokemon.findAll()
@@ -75,6 +29,7 @@ router.get('/', async (req, res, next) => {
         res.status(200).send({pokemons, pokemonTypes, pokemonMovements})
     }
     catch(err){
+        res.status(500).send({message: "An error has occurred"})
         next(err)
     }
 })
@@ -99,10 +54,11 @@ router.get('/:id', async (req, res, next) => {
         
             res.status(203).send({pokemon, movements, types})
         } else {
-            res.status(404).send({message: "Pokemon no encontrado"})
+            res.status(404).send({message: "Pokemon not found"})
         }
     }
     catch(err){
+        res.status(500).send({message: "An error has occurred"})
         next(err)
     }
 })
@@ -137,12 +93,12 @@ router.post('/', verifyToken, async (req, res, next) => {
             await PokemonMovements.create({id_pokemon: `${pokemonId}`, id_movement: `${movementId}`})
         }
         
-        res.status(201).send({pokemon,types,movements})
+        res.status(201).send({message: "Pokemon created succesfully"})
     }
     catch(err){
+        res.status(500).send({message: "An error has occurred"})
         next(err)
     }
 })
-
 
 module.exports = router
