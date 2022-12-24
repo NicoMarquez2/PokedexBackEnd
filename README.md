@@ -5,6 +5,10 @@
 
 -Crear una database en Postgres llamada "pokedex"
 
+### Port
+
+-El servidor correrá en el puerto 8080
+
 -Configurar .env (PGHOST, PGUSER, PGPASSWORD, PGDATABASE, PGPORT)
 
 -Ejecutar comando npm install
@@ -18,4 +22,3 @@
 
 -Ejecutar comando npm run start
 
--El servidor correrá en el puerto 8080
