@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
             const validPassword = await bcrypt.compare(req.body.password, user[0].dataValues.password)
     
             if(!validPassword){
-                res.status(401).send({message: 'El usuario no es valido'})        
+                res.status(401).send({message: 'User is not valid'})        
             }
             else{
                 const token = jwt.sign({
@@ -28,10 +28,10 @@ router.post('/', async (req, res) => {
                     id: user.email
                 }, TOKEN_SECRET)
         
-                res.send({message:'Login exitoso',token, userId})
+                res.send({message:'Succesfully login',token, userId})
             }
         } else {
-            res.status(402).send({message: 'Email no registrado'})
+            res.status(402).send({message: 'Email not found'})
         }
     } 
     catch{

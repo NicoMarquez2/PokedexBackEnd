@@ -13,6 +13,9 @@
 
 -Ejecutar comando npx sequelize-cli db:seed:all
 
+### Por ayuda con sequielize consulte el siguiente link:
+(https://sequelize.org/docs/v6/other-topics/migrations/)
+
 -Ejecutar comando npm run start
 
 -El servidor correrá en el puerto 8080

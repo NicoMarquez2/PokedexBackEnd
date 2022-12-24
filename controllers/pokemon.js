@@ -66,14 +66,14 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', verifyToken, async (req, res, next) => {
     try{
         const userId = req.get("userId")
-    
         const pokemon = req.body.pokemon
         const types = req.body.pokemonTypes
         const movements = req.body.pokemonMovements
-        
         const typeId = types.map((element) => element.id)
         const movementId = movements.map((element) => element.id)
+        
         const pokemonId = await createIdToNewPokemon()
+
         pokemon['id'] = pokemonId
         pokemon['created_by'] = parseInt(userId)
     

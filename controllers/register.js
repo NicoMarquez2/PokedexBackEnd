@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         })
         console.log(user)
         if(user [0]){
-            res.status(400).send({message: "Ese email ya esta registrado!"})
+            res.status(400).send({message: "This email is already register"})
         } else {
             const newUser = {
                 name: req.body.name,
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
             }
         
             await User.create(newUser)
-            .then(()=>{res.status(204).send({message: "Usuario creado exitosamente"})})
+            .then(()=>{res.status(204).send({message: "User created succesfully"})})
         }   
     }
     catch{
